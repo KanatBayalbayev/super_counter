@@ -1,38 +1,312 @@
-.App {
-  text-align: center;
+.main-container {
+  width: 800px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  background: black;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-container .counterDisplay {
+  padding: 50px 0;
+  width: 50%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.main-container .counterDisplay .settings {
+  margin-left: -20px;
+  margin-top: -25px;
+}
+.main-container .counterDisplay .settings .icon {
+  margin-left: 25px;
+  font-size: 23px;
+  cursor: pointer;
+}
+.main-container .counterDisplay .count {
+  font-size: 120px;
+  letter-spacing: 3px;
+}
+.main-container .counterDisplay .buttons {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-container .counterDisplay .buttons button {
+  background: black;
   color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid gray;
+  cursor: pointer;
 }
-
-.App-link {
-  color: #61dafb;
+.main-container .counterSettings {
+  width: 50%;
+  border-left: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.main-container .counterSettings .name {
+  margin-bottom: 30px;
+}
+.main-container .counterSettings .settings-container {
+  width: 70%;
+}
+.main-container .counterSettings .settings-container .div1 {
+  border: 2px solid gray;
+  border-radius: 5px;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-container .counterSettings .settings-container .div1 label {
+  margin-left: 10px;
+}
+.main-container .counterSettings .settings-container .div1 input {
+  padding-left: 10px;
+  margin-left: 5px;
+  width: 50px;
+  height: 30px;
+  outline: none;
+  overflow: hidden;
+}
+.main-container .counterSettings .settings-container .div2 {
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 20px 30px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-container .counterSettings .settings-container .div2 .switchToogle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-container .counterSettings .settings-container .div2 .switchToogle .slider {
+  background-color: rgba(255, 255, 255, 0.168627451);
+  border-radius: 100px;
+  padding: 1px;
+  margin: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  align-items: center;
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 29px;
+  box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, rgba(0, 0, 0, 0.21) 0px 0px 0px 24px inset, #22cc3f 0px 0px 0px 0px inset, rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
+}
+.main-container .counterSettings .settings-container .div2 .switchToogle .slider::after {
+  content: "";
+  display: flex;
+  top: 2.3px;
+  left: 2px;
+  width: 25px;
+  height: 26px;
+  background-color: #e3e3e3;
+  border-radius: 200px;
+  position: absolute;
+  box-shadow: transparent 0px 0px 0px 2px, rgba(0, 0, 0, 0.3) 0px 6px 6px;
+  transition: left 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s, background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  will-change: left, background-color;
+}
+.main-container .counterSettings .settings-container .div2 .switchToogle .switch input[type=checkbox]:checked + .slider {
+  box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, #22cc3f 0px 0px 0px 2px inset, #22cc3f 0px 0px 0px 24px inset, rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
+}
+.main-container .counterSettings .settings-container .div2 .switchToogle .switch input[type=checkbox]:checked + .slider::after {
+  left: 24px;
+}
+.main-container .counterSettings .settings-container .div2 .switchToogle .switch input[type=checkbox] {
+  display: none;
+}
+.main-container .counterSettings .settings-container .div2 .max input {
+  padding-left: 10px;
+  margin-left: 5px;
+  width: 50px;
+  height: 30px;
+  outline: none;
+  overflow: hidden;
+}
+.main-container .counterSettings .settings-container .div3 {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  /* Default */
+  /* Checked */
+}
+.main-container .counterSettings .settings-container .div3 .theme {
+  display: flex;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.main-container .counterSettings .settings-container .div3 .theme__fill,
+.main-container .counterSettings .settings-container .div3 .theme__icon {
+  transition: 0.3s;
+}
+.main-container .counterSettings .settings-container .div3 .theme__fill {
+  background-color: var(--bg);
+  display: block;
+  mix-blend-mode: difference;
+  position: fixed;
+  inset: 0;
+  height: 100%;
+  transform: translateX(-100%);
+}
+.main-container .counterSettings .settings-container .div3 .theme__icon,
+.main-container .counterSettings .settings-container .div3 .theme__toggle {
+  cursor: pointer;
+  z-index: 1;
+}
+.main-container .counterSettings .settings-container .div3 .theme__icon,
+.main-container .counterSettings .settings-container .div3 .theme__icon-part {
+  position: absolute;
+}
+.main-container .counterSettings .settings-container .div3 .theme__icon {
+  display: block;
+  top: 0.5em;
+  left: 0.5em;
+  width: 1.5em;
+  height: 1.5em;
+}
+.main-container .counterSettings .settings-container .div3 .theme__icon-part {
+  border-radius: 50%;
+  box-shadow: 0.4em -0.4em 0 0.5em hsl(0, 0%, 100%) inset;
+  top: calc(50% - 0.5em);
+  left: calc(50% - 0.5em);
+  width: 1em;
+  height: 1em;
+  transition: box-shadow var(--transDur) ease-in-out, opacity var(--transDur) ease-in-out, transform var(--transDur) ease-in-out;
+  transform: scale(0.5);
+}
+.main-container .counterSettings .settings-container .div3 .theme__icon-part ~ .theme__icon-part {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.05em;
+  top: 50%;
+  left: calc(50% - 0.05em);
+  transform: rotate(0deg) translateY(0.5em);
+  transform-origin: 50% 0;
+  width: 0.1em;
+  height: 0.2em;
+}
+.main-container .counterSettings .settings-container .div3 .theme__icon-part:nth-child(3) {
+  transform: rotate(45deg) translateY(0.45em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__icon-part:nth-child(4) {
+  transform: rotate(90deg) translateY(0.45em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__icon-part:nth-child(5) {
+  transform: rotate(135deg) translateY(0.45em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__icon-part:nth-child(6) {
+  transform: rotate(180deg) translateY(0.45em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__icon-part:nth-child(7) {
+  transform: rotate(225deg) translateY(0.45em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__icon-part:nth-child(8) {
+  transform: rotate(270deg) translateY(0.5em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__icon-part:nth-child(9) {
+  transform: rotate(315deg) translateY(0.5em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__label,
+.main-container .counterSettings .settings-container .div3 .theme__toggle,
+.main-container .counterSettings .settings-container .div3 .theme__toggle-wrap {
+  position: relative;
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle,
+.main-container .counterSettings .settings-container .div3 .theme__toggle:before {
+  display: block;
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle {
+  background-color: hsl(48, 90%, 85%);
+  border-radius: 25%/50%;
+  box-shadow: 0 0 0 0.125em var(--primaryT);
+  padding: 0.25em;
+  width: 6em;
+  height: 3em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  transition: background-color var(--transDur) ease-in-out, box-shadow 0.15s ease-in-out, transform var(--transDur) ease-in-out;
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:before {
+  background-color: hsl(48, 90%, 55%);
+  border-radius: 50%;
+  content: "";
+  width: 2.5em;
+  height: 2.5em;
+  transition: 0.3s;
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:focus {
+  box-shadow: 0 0 0 0.125em var(--primary);
+  outline: transparent;
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:checked {
+  background-color: hsl(198, 90%, 15%);
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:checked:before,
+.main-container .counterSettings .settings-container .div3 .theme__toggle:checked ~ .theme__icon {
+  transform: translateX(3em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:checked:before {
+  background-color: hsl(198, 90%, 55%);
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:checked ~ .theme__fill {
+  transform: translateX(0);
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:checked ~ .theme__icon .theme__icon-part:nth-child(1) {
+  box-shadow: 0.2em -0.2em 0 0.2em hsl(0, 0%, 100%) inset;
+  transform: scale(1);
+  top: 0.2em;
+  left: -0.2em;
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:checked ~ .theme__icon .theme__icon-part ~ .theme__icon-part {
+  opacity: 0;
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:checked ~ .theme__icon .theme__icon-part:nth-child(2) {
+  transform: rotate(45deg) translateY(0.8em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:checked ~ .theme__icon .theme__icon-part:nth-child(3) {
+  transform: rotate(90deg) translateY(0.8em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:checked ~ .theme__icon .theme__icon-part:nth-child(4) {
+  transform: rotate(135deg) translateY(0.8em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:checked ~ .theme__icon .theme__icon-part:nth-child(5) {
+  transform: rotate(180deg) translateY(0.8em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:checked ~ .theme__icon .theme__icon-part:nth-child(6) {
+  transform: rotate(225deg) translateY(0.8em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:checked ~ .theme__icon .theme__icon-part:nth-child(7) {
+  transform: rotate(270deg) translateY(0.8em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:checked ~ .theme__icon .theme__icon-part:nth-child(8) {
+  transform: rotate(315deg) translateY(0.8em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle:checked ~ .theme__icon .theme__icon-part:nth-child(9) {
+  transform: rotate(360deg) translateY(0.8em);
+}
+.main-container .counterSettings .settings-container .div3 .theme__toggle-wrap {
+  margin: 0 0.75em;
+}
+@supports selector(:focus-visible) {
+  .main-container .counterSettings .settings-container .div3 .theme__toggle:focus {
+    box-shadow: 0 0 0 0.125em var(--primaryT);
   }
-  to {
-    transform: rotate(360deg);
+  .main-container .counterSettings .settings-container .div3 .theme__toggle:focus-visible {
+    box-shadow: 0 0 0 0.125em var(--primary);
   }
-}
+}/*# sourceMappingURL=app.css.map */
