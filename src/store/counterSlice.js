@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   value: 0,
   isSettingsDisplayed: false,
+  isDarkMode: false
 };
 
 const counterSlice = createSlice({
@@ -23,6 +24,9 @@ const counterSlice = createSlice({
     },
     setCount(state, action) {
         state.value = action.payload
+    },
+    setDarkMode(state, action) {
+        state.isDarkMode = action.payload
     }
   },
 });

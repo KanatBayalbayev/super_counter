@@ -1,3 +1,15 @@
+.body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.darkMode {
+  background-color: black;
+}
+
 .main-container {
   width: 800px;
   height: 500px;
@@ -34,8 +46,8 @@
       justify-content: space-between;
       align-items: center;
       button {
-        background: black;
-        color: white;
+        background: white;
+        color: black;
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -363,5 +375,13 @@
       }
     }
     // display: none;
+  }
+}
+.white {
+  background: white;
+  color: black;
+  button {
+    background: white;
+    color: black;
   }
 }

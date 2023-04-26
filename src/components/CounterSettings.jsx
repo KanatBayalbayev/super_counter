@@ -6,8 +6,12 @@ const CounterSettings = () => {
   const dispatch = useDispatch();
   const visibility = useSelector((state) => state.isSettingsDisplayed);
   const value = useSelector((state) => state.value);
+  const isDarkMode = useSelector((state) => state.isDarkMode);
   const setCountHandler = (event) => {
     dispatch(counterActions.setCount(event.target.value));
+  };
+  const darkModeToggle = (event) => {
+    dispatch(counterActions.setDarkMode(event.target.checked));
   };
   return (
     <>
@@ -39,7 +43,7 @@ const CounterSettings = () => {
               </div>
             </div>
             <div className="div3">
-              <label for="theme" className="theme">
+              <label htmlFor="theme" className="theme">
                 <span className="theme__toggle-wrap">
                   <input
                     id="theme"
@@ -47,7 +51,8 @@ const CounterSettings = () => {
                     type="checkbox"
                     role="switch"
                     name="theme"
-                    value="dark"
+                    value={isDarkMode}
+                    onClick={darkModeToggle}
                   />
                   <span className="theme__fill"></span>
                   <span className="theme__icon">
